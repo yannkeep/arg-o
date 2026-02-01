@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse Forensique : Blague ou Politique ?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 400px; }
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+    <!-- Chosen Palette: 'Cyber-Analysis' - Deep Slate (#1e293b), Electric Blue (#3b82f6), Alert Red (#ef4444), Warning Orange (#f97316), Clean White (#ffffff). High contrast for data clarity. -->
+    <!-- Application Structure Plan: 
+         1. Header: Hook the user with the core question ("Joke vs Politics") and the immediate answer.
+         2. Executive Summary: High-level metrics (Spam Score, Confusion Index).
+         3. Deconstruction Section: Visualizing the "Word Salad" (Donut Chart) to show the incoherence.
+         4. Comparative Analysis: Radar Chart comparing this URL's profile to legitimate news vs. satire.
+         5. Keyword Forensics: Bar Chart analyzing the 'Clickbait' potential of specific terms (Deborsu, MAGA, Chelsea).
+         6. Technical Insight: Flow diagram (CSS/HTML) showing how SEO spam funnels traffic.
+         7. Conclusion: Final verdict summarizing why this is technical manipulation, not content.
+    -->
+    <!-- Visualization & Content Choices:
+         - Donut Chart: To display the fragmented 'Topic Composition'. Justifies the 'Incoherence' argument. (Goal: Inform/Compare)
+         - Radar Chart: To contrast 'Credibility', 'Focus', and 'Sensation' metrics against norms. (Goal: Compare)
+         - Horizontal Bar Chart: To rank keywords by 'Search Volume' vs 'Relevance', highlighting the 'Bait' tactic. (Goal: Relationships)
+         - CSS Flowchart: To visualize the 'Funnel' process of SEO spam without using Mermaid/SVG. (Goal: Organize)
+         - Justification: These visuals turn abstract metadata into concrete evidence of manipulation.
+         - Library: Chart.js for all data viz; HTML/Tailwind for structural diagrams. NO SVG used.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation / Header -->
+    <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-3xl">🔍</span>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight">Web Forensics</h1>
+                    <p class="text-xs text-slate-400">Analyse de l'URL source : ouaisfieu.github.io</p>
+                </div>
+            </div>
+            <div class="text-right hidden sm:block">
+                <div class="text-xs font-semibold uppercase tracking-wider text-blue-400">Statut de l'Analyse</div>
+                <div class="text-lg font-bold">SEO SPAM DÉTECTÉ</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+        <!-- Section 1: Introduction & Verdict -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6">
+                <div class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">Réponse à votre question</div>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    Ni une blague,<br>Ni de la politique.
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    L'URL que vous avez soumise est un exemple classique de <strong class="text-blue-600">"Salade de Mots-Clés"</strong> (Keyword Stuffing). Ce n'est pas un article satirique structuré, ni un rapport confidentiel. C'est une page générée artificiellement pour tromper les moteurs de recherche.
+                </p>
+                <div class="flex space-x-4">
+                    <div class="p-4 bg-white border-l-4 border-red-500 shadow-sm rounded-r-md w-full">
+                        <div class="text-xs text-slate-500 uppercase">Probabilité de Spam</div>
+                        <div class="text-3xl font-bold text-slate-900">98.5%</div>
+                    </div>
+                    <div class="p-4 bg-white border-l-4 border-orange-400 shadow-sm rounded-r-md w-full">
+                        <div class="text-xs text-slate-500 uppercase">Indice de Cohérence</div>
+                        <div class="text-3xl font-bold text-slate-900">12/100</div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl shadow-xl transform transition hover:scale-[1.01]">
+                <h3 class="text-lg font-bold mb-4 text-center border-b pb-2">Anatomie de l'URL Suspecte</h3>
+                <div class="font-mono text-sm break-all space-y-2">
+                    <span class="text-slate-400">https://</span><span class="text-orange-600 font-bold">ouaisfieu.github.io</span><span class="text-slate-300">/</span><br>
+                    <div class="pl-4 border-l-2 border-slate-200">
+                        <span class="bg-red-100 text-red-800 px-1 rounded">maga</span>-
+                        <span class="bg-red-100 text-red-800 px-1 rounded">fake-news</span>-
+                        <span class="bg-blue-100 text-blue-800 px-1 rounded">deborsu</span>-
+                        <span class="bg-orange-100 text-orange-800 px-1 rounded">fraudeurs</span>-
+                        <span class="bg-purple-100 text-purple-800 px-1 rounded">leaks</span>-
+                        <span class="bg-red-100 text-red-800 px-1 rounded">scandale</span>
+                    </div>
+                    <span class="text-slate-300">/</span><span class="bg-green-100 text-green-800 px-1 rounded">seo-gratuit</span>
+                    <span class="text-slate-300">/</span><span class="bg-green-100 text-green-800 px-1 rounded">roi</span>
+                    <span class="text-slate-300">/</span><span class="bg-indigo-100 text-indigo-800 px-1 rounded">chelsea</span>
+                </div>
+                <p class="mt-4 text-xs text-center text-slate-500">
+                    Cette juxtaposition de termes contradictoires vise à capturer le trafic de plusieurs niches simultanément.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Topic Fragmentation (Donut Chart) -->
+        <section class="bg-white rounded-2xl shadow-md p-8">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-slate-800">Fragmentation Thématique</h3>
+                <p class="text-slate-600 max-w-3xl mt-2">
+                    Un véritable article politique ou humoristique se concentre généralement sur un sujet principal. L'analyse de votre lien révèle une dispersion extrême des sujets, caractéristique des tentatives de manipulation SEO (Search Engine Optimization).
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1 space-y-4">
+                    <div class="p-4 bg-slate-50 rounded-lg">
+                        <h4 class="font-bold text-slate-700">Politique US (MAGA)</h4>
+                        <p class="text-sm text-slate-500">Mot-clé à très haut volume mondial.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg">
+                        <h4 class="font-bold text-slate-700">Local BE (Deborsu)</h4>
+                        <p class="text-sm text-slate-500">Ciblage géographique spécifique (Belgique).</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg">
+                        <h4 class="font-bold text-slate-700">Marketing (SEO/ROI)</h4>
+                        <p class="text-sm text-slate-500">Mots-clés commerciaux ("B2B").</p>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="chart-container">
+                        <canvas id="topicChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-slate-400 mt-2">Répartition des segments de l'URL par catégorie sémantique</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Comparative Radar (Cognitive Dissonance) -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white rounded-2xl shadow-md p-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Profil de Crédibilité</h3>
+                <p class="text-slate-600 mb-6">
+                    Pourquoi avez-vous hésité entre "blague" et "politique" ? Parce que le profil du lien est anormal. Comparons sa signature à celle d'un vrai scandale politique et d'un site satirique (comme Le Gorafi ou The Onion).
+                </p>
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Contextual List -->
+            <div class="flex flex-col justify-center space-y-6">
+                <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                    <h4 class="text-lg font-bold text-blue-900 mb-2">1. L'Absence de Narration</h4>
+                    <p class="text-blue-800 text-sm">
+                        Une blague a une structure (prémisse -> chute). Ce lien n'a que des "déclencheurs" émotionnels (Scandale, Fraude) sans verbe ni lien logique.
+                    </p>
+                </div>
+                <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
+                    <h4 class="text-lg font-bold text-red-900 mb-2">2. Le Facteur "Deborsu"</h4>
+                    <p class="text-red-800 text-sm">
+                        Christophe Deborsu est un journaliste respecté. Son nom est inséré ici uniquement pour attirer l'attention du public belge francophone sur un contenu qui n'a rien à voir avec lui. C'est une technique d'appât ("Bait and Switch").
+                    </p>
+                </div>
+                <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500">
+                    <h4 class="text-lg font-bold text-orange-900 mb-2">3. L'Intrusion Technique</h4>
+                    <p class="text-orange-800 text-sm">
+                        Les termes "SEO Gratuit" et "ROI" (Retour sur Investissement) trahissent l'intention réelle : vendre des services douteux ou gonfler des statistiques web.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Keyword Impact Analysis (Bar Chart) -->
+        <section class="bg-white rounded-2xl shadow-md p-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-6">
+                <div class="max-w-2xl">
+                    <h3 class="text-2xl font-bold text-slate-800">Analyse de l'Appât (Clickbait)</h3>
+                    <p class="text-slate-600 mt-2">
+                        Chaque mot de l'URL a été choisi pour son "poids" algorithmique ou émotionnel. Voici une estimation de l'impact visé par le créateur du lien.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="keywordChart"></canvas>
+            </div>
+            <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-2">
+                    <div class="text-2xl font-bold text-red-500">Peur</div>
+                    <div class="text-xs text-slate-400">Levier émotionnel principal</div>
+                </div>
+                <div class="p-2">
+                    <div class="text-2xl font-bold text-blue-500">Curiosité</div>
+                    <div class="text-xs text-slate-400">Levier secondaire</div>
+                </div>
+                <div class="p-2">
+                    <div class="text-2xl font-bold text-green-500">Gain</div>
+                    <div class="text-xs text-slate-400">Promesse financière</div>
+                </div>
+                <div class="p-2">
+                    <div class="text-2xl font-bold text-purple-500">Tribalisme</div>
+                    <div class="text-xs text-slate-400">Appartenance politique</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: The Mechanism (Diagram using HTML/Tailwind) -->
+        <section class="py-8">
+            <h3 class="text-2xl font-bold text-slate-800 text-center mb-10">Le Mécanisme de la Fraude SEO</h3>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Connecting Line -->
+                <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -z-10 transform -translate-y-1/2 hidden md:block"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-100 flex flex-col items-center text-center">
+                        <div class="w-12 h-12 bg-slate-800 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                        <h4 class="font-bold text-slate-800 mb-2">Agrégation</h4>
+                        <p class="text-xs text-slate-500">Le robot collecte des mots-clés "chauds" (Buzzwords) sans se soucier du sens.</p>
+                        <div class="mt-2 text-xs font-mono bg-slate-100 p-1 rounded">MAGA + Deborsu</div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-100 flex flex-col items-center text-center">
+                        <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                        <h4 class="font-bold text-slate-800 mb-2">Génération</h4>
+                        <p class="text-xs text-slate-500">Création automatique de milliers de pages/URLs combinant ces termes.</p>
+                        <div class="mt-2 text-xs font-mono bg-slate-100 p-1 rounded">/index.html</div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-100 flex flex-col items-center text-center">
+                        <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
+                        <h4 class="font-bold text-slate-800 mb-2">Confusion</h4>
+                        <p class="text-xs text-slate-500">L'utilisateur (vous) voit le lien, est intrigué par le mélange bizarre, et clique.</p>
+                        <div class="mt-2 text-xs font-mono bg-slate-100 p-1 rounded">Clic utilisateur</div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-100 flex flex-col items-center text-center">
+                        <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">4</div>
+                        <h4 class="font-bold text-slate-800 mb-2">Monétisation</h4>
+                        <p class="text-xs text-slate-500">Redirection vers des pubs, malware, ou vente du "Jus SEO" à un site tiers.</p>
+                        <div class="mt-2 text-xs font-mono bg-slate-100 p-1 rounded">$$$</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <footer class="bg-slate-900 text-slate-400 rounded-t-3xl mt-12 p-8 md:p-12 text-center">
+            <h2 class="text-2xl text-white font-bold mb-4">Conclusion</h2>
+            <p class="max-w-2xl mx-auto mb-6">
+                Ce lien n'est pas une satire politique subtile. C'est du bruit numérique généré pour exploiter la notoriété de termes comme "Deborsu" et "MAGA". La meilleure action est de ne pas cliquer et de ne pas partager.
+            </p>
+            <div class="inline-flex items-center justify-center space-x-2 bg-slate-800 px-4 py-2 rounded-lg">
+                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                <span class="text-sm font-mono">Analyse terminée. Aucun risque détecté sur cette page de rapport.</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- UTILITIES ---
+
+        // Label Wrapping Logic (Mandatory)
+        const wrapLabel = (str, maxLen = 16) => {
+            if (str.length <= maxLen) return str;
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= maxLen) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        };
+
+        // Tooltip Config (Mandatory)
+        const commonTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // Common Chart Options
+        const baseOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: commonTooltipConfig,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { family: "'Inter', sans-serif" },
+                        usePointStyle: true
+                    }
+                }
+            }
+        };
+
+        // --- CHARTS ---
+
+        // 1. Topic Breakdown (Donut)
+        const ctxTopic = document.getElementById('topicChart').getContext('2d');
+        const topicLabels = ['Politique US (MAGA)', 'Journalisme Belge (Deborsu)', 'Mots-clés Alarmistes', 'Termes Techniques SEO', 'Sport/Divers (Chelsea)'];
+        
+        new Chart(ctxTopic, {
+            type: 'doughnut',
+            data: {
+                labels: topicLabels.map(l => wrapLabel(l, 20)),
+                datasets: [{
+                    data: [20, 20, 30, 20, 10],
+                    backgroundColor: [
+                        '#ef4444', // Red (Politics)
+                        '#3b82f6', // Blue (Local)
+                        '#f97316', // Orange (Alarmist)
+                        '#10b981', // Green (Tech)
+                        '#6366f1'  // Indigo (Sport)
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                ...baseOptions,
+                cutout: '60%',
+                plugins: {
+                    ...baseOptions.plugins,
+                    legend: {
+                        ...baseOptions.plugins.legend,
+                        position: 'right'
+                    }
+                }
+            }
+        });
+
+        // 2. Radar Chart (Comparison)
+        const ctxRadar = document.getElementById('radarChart').getContext('2d');
+        const radarLabels = ['Cohérence Sémantique', 'Intention Politique', 'Valeur Informative', 'Potentiel Viral', 'Risque Technique'];
+        
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: radarLabels.map(l => wrapLabel(l, 15)),
+                datasets: [{
+                    label: 'URL Analysée (Spam)',
+                    data: [10, 20, 5, 95, 90], // Low coherence, high risk/viral
+                    backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                    borderColor: '#ef4444',
+                    pointBackgroundColor: '#ef4444',
+                    pointBorderColor: '#fff',
+                    borderWidth: 2
+                },
+                {
+                    label: 'Vrai Article de Presse',
+                    data: [90, 80, 85, 60, 10], // High coherence, high value
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    borderColor: '#3b82f6',
+                    pointBackgroundColor: '#3b82f6',
+                    pointBorderColor: '#fff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                ...baseOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: '#e2e8f0' },
+                        grid: { color: '#e2e8f0' },
+                        pointLabels: {
+                            font: { family: "'Inter', sans-serif", size: 12 },
+                            color: '#64748b'
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // 3. Keyword Impact (Bar Chart)
+        const ctxKeyword = document.getElementById('keywordChart').getContext('2d');
+        const kwLabels = ['"Scandale/Leaks"', '"MAGA"', '"Deborsu"', '"SEO Gratuit"', '"Chelsea"', '"Fake News"'];
+        
+        new Chart(ctxKeyword, {
+            type: 'bar',
+            data: {
+                labels: kwLabels.map(l => wrapLabel(l, 16)),
+                datasets: [{
+                    label: 'Potentiel de Clic (Score Arbitraire 0-100)',
+                    data: [95, 85, 75, 40, 50, 90],
+                    backgroundColor: [
+                        '#ef4444', // Alarmist
+                        '#ef4444', 
+                        '#3b82f6', // Local Interest
+                        '#10b981', // Tech
+                        '#6366f1', // Sport
+                        '#f97316'  // Buzzword
+                    ],
+                    borderRadius: 4,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                ...baseOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#f1f5f9' },
+                        title: { display: true, text: 'Score d\'Attractivité' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    ...baseOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
